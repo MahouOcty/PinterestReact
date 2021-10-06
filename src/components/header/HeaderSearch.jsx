@@ -1,5 +1,4 @@
 import {React, useState} from 'react';
-import { BsSearch } from 'react-icons/bs';
 
 const HeaderSearch = () => {
     
