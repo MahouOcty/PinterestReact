@@ -1,10 +1,18 @@
 import React from 'react';
+import PinImage from './PinImage';
+import PinUser from './PinUser';
+
 
 const PinCard = (props) => {
   return (
     <div
       style={{ ..._stylesPinCard.pin_card, ..._stylesPinCard[props.size] }}
-    ></div>
+    >
+     <PinImage
+     image={props.image}
+     size={props.size}/>
+     <PinUser/>
+    </div>
   );
 };
 
@@ -13,17 +21,16 @@ const _stylesPinCard = {
     margin: '15px 10px',
     padding: 0,
     borderRadius: '16px',
-    backgroundColor: 'red',
   },
   small: {
-    gridRowEnd: 'span 26',
+    gridRowEnd: 'span 30',
   },
   medium: {
-    gridRowEnd: 'span 33',
+    gridRowEnd: 'span 42',
   },
   large: {
-    gridRowEnd: 'span 45',
-  },
+    gridRowEnd: 'span 57',
+  }
 };
 
 export default PinCard;

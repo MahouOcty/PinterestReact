@@ -1,6 +1,6 @@
 import './App.css';
-import HeaderLayout from './components/HeaderLayout';
-import PinterestLayout from './components/PinterestLayout';
+import HeaderLayout from './components/header/HeaderLayout';
+import PinterestLayout from './components/pin/PinterestLayout';
 
 const App = () => {
   return (
