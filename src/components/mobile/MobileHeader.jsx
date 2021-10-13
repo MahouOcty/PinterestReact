@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
+import useWindowSize from '../useWindowsSize';
 
 const MobileHeader = () => {
+    const WindowsSize = useWindowSize();
+    const display = (WindowsSize.width <= 375) ? "mobile" : "other";
+
+    const [yaxis, setYaxis] = useState(window.scrollY);
+    const [show, setShow] = useState("show");
+
+    window.onscroll = () => {
+        if(window.scrollY < yaxis || window.scrollY < 100){
+            console.log(window.scrollY);
+            setShow("show");
+            setYaxis(window.scrollY);
+        }
+        else {
+            setShow("hide");
+            setYaxis(window.scrollY);
+        }
+    }
+
     return (
-        <div style={{..._headerStyle.header}}>
+
+
+        <div style={{..._headerStyle.header, ..._headerStyle[show], ..._headerStyle.display[display]}}>
             <div style={{..._headerStyle.content}}>
                 Para ti
             </div>
@@ -27,9 +48,23 @@ const _headerStyle = {
         position: "fixed",
         zIndex: 20,
         alignItems: "center",
-        display: "flex",
         overflow: "hidden",
-        whiteSpace: "nowrap"
+        whiteSpace: "nowrap",
+        transition: "all 0.5s ease"
+    },
+    show: {
+        top: "0"
+    },
+    hide: {
+        top: "-65px"
+    },
+    display: {
+        mobile: {
+            display: "flex"
+        },
+        other: {
+            display: "none"
+        }
     },
     content: {
         display: "flex",

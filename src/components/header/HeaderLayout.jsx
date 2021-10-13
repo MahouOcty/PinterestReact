@@ -19,9 +19,11 @@ const HeaderLayout = () => {
   style={{ ..._headerStyle[iPhoneX], ..._headerStyle.header,}}>
     <HeaderLogo/>
     <HeaderSelect
-    content="Inicio"/>
+    content="Inicio"
+    selected={true}/>
     <HeaderSelect
-    content="Hoy"/>
+    content="Hoy"
+    selected={false}/>
     <HeaderSearch/>
     <HeaderButton
     content={BsFillBellFill}/>

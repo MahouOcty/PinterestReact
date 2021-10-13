@@ -2,15 +2,28 @@ import React, { useState } from 'react';
 
 const HeaderSelect = (props) => {
     const Content = props.content
+    const selected = props.selected;
 
-    const [hover, setHover] = useState("leave");
+    const [hover, setHover] = useState(selected ? "selected" : "leave");
+
+    
 
     const OnHover = () => {
-        setHover("hover")
+        if(!selected){
+            setHover("hover")
+        }
+        else {
+            setHover("selected")
+        }
     }
 
     const OnLeave = () => {
-        setHover("leave")
+        if (!selected) {
+            setHover("leave")
+        }
+        else {
+            setHover("selected")
+        }
     }
 
     return (
@@ -40,6 +53,10 @@ const _SelectStyles = {
     },
     leave: {
         backgroundColor: "white"
+    },
+    selected: {
+        backgroundColor: "black",
+        color: "white"
     }
 }
 
