@@ -5,11 +5,23 @@ import HeaderPFP from './HeaderPFP';
 import HeaderOptions from './HeaderOptions';
 import HeaderSearch from './HeaderSearch';
 import HeaderLogo from './HeaderLogo';
+import HeaderSelect from './HeaderSelect';
+import useWindowSize from '../useWindowsSize';
+
 
 const HeaderLayout = () => {
+  
+  const WindowsSize = useWindowSize();
+
+  const iPhoneX = (WindowsSize.width>375) ? "show" : "hide";
+
   return <div 
-  style={{..._headerStyle.header}}>
+  style={{ ..._headerStyle[iPhoneX], ..._headerStyle.header,}}>
     <HeaderLogo/>
+    <HeaderSelect
+    content="Inicio"/>
+    <HeaderSelect
+    content="Hoy"/>
     <HeaderSearch/>
     <HeaderButton
     content={BsFillBellFill}/>
@@ -26,11 +38,16 @@ const _headerStyle = {
     height: "65px",
     width: "100%",
     backgroundColor: "white",
-    display: "flex",
     position: "fixed",
     zIndex:1,
-    justifyContent: "flex-end",
     alignItems: "center"
+  },
+  show: {
+    display: "flex",
+    justifyContent: "stretch"
+  },
+  hide: {
+    display: "none"
   }
 }
 

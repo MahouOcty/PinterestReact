@@ -29,13 +29,10 @@ const _logoStyle = {
         borderRadius: "30px",
         color: "#e60023",
         display: "flex",
-        margin:"5px",
         justifyContent: "center",
         alignItems: "center",
         cursor: "pointer",
-        fontSize: "25px",
-        position: "absolute",
-        left: "10px"
+        fontSize: "25px"
     },
     hover: {
         backgroundColor: "#f0f0f0"

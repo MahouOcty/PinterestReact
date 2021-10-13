@@ -30,7 +30,6 @@ const _buttonStyle = {
         borderRadius: "30px",
         color: "#767676",
         display: "flex",
-        margin:"5px",
         position: "relative",
         justifyContent: "center",
         alignItems: "center",
