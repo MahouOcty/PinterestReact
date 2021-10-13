@@ -30,7 +30,6 @@ const _logoStyle = {
         color: "#e60023",
         display: "flex",
         margin:"5px",
-        position: "relative",
         justifyContent: "center",
         alignItems: "center",
         cursor: "pointer",

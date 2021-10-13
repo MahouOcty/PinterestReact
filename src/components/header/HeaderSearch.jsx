@@ -28,10 +28,9 @@ const HeaderSearch = () => {
 const _stylesSearch = {
     textBox: {
         height: "50px",
-        width: "66%",
+        width: "60wh",
         border: "0px",
         borderRadius: "30px",
-        margin: "5px",
         display: "flex"
     },
     hover: {
